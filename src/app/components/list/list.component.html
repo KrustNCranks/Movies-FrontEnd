@@ -1,0 +1,91 @@
+<section id="home-header">
+  <div style="padding-left: 1%">
+    <div style="padding-top: 3%">
+      <p style="font-family: 'Roboto', sans-serif;color: #acb6c6; font-size: 30px">Top Rated Movies</p>
+    </div>
+  </div>
+</section>
+
+<div class="row">
+  <div class="col-xs-2" *ngFor="let movie of movies; let i=index">
+    <div *ngIf="i<5">
+      <div class="shadow p-3 mb-5" style="background-color: #e1e7f1">
+        <div class="card-group" style="width: 14rem;">
+            <div class="card" style="background-color: #e1e7f1">
+              <img class="card-image-top" *ngIf="movie.poster_path" [lazyLoad]="movie.poster_path" alt="poster movie">
+              <div class="card-body">
+                <h5 class="title" style="float: left">{{movie.title}}</h5>
+                <br>
+                <p class="card-text" style="float: left"><small class="text-muted">{{movie.release_date | date}}</small></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-2" *ngFor="let movie of movies; let i=index">
+    <div *ngIf="i>4 && i<10 ">
+      <div class="shadow p-3 mb-5" style="background-color: #e1e7f1">
+      <div class="card-group" style="width: 14rem;">
+        <div class="card" style="background-color: #e1e7f1">
+          <img class="card-image-top" *ngIf="movie.poster_path" [lazyLoad]="movie.poster_path" alt="poster movie">
+          <div class="card-body">
+            <h5 class="title" style="float: left">{{movie.title}}</h5>
+            <br>
+            <p class="card-text" style="float: left"><small class="text-muted">{{movie.release_date | date}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="col-xs-2" *ngFor="let movie of movies; let i=index">
+    <div *ngIf="i>9 && i<15 ">
+      <div class="shadow p-3 mb-5" style="background-color: #e1e7f1">
+      <div class="card-group" style="width: 14rem;">
+        <div class="card" style="background-color: #e1e7f1">
+          <img class="card-image-top" *ngIf="movie.poster_path" [lazyLoad]="movie.poster_path" alt="poster movie">
+          <div class="card-body">
+            <h5 class="title" style="float: left">{{movie.title}}</h5>
+            <br>
+            <p class="card-text" style="float: left"><small class="text-muted">{{movie.release_date | date}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="col-xs-2" *ngFor="let movie of movies; let i=index">
+    <div *ngIf="i>14 && i<20 ">
+      <div class="shadow p-3 mb-5" style="background-color: #e1e7f1">
+      <div class="card-group" style="width: 14rem;">
+        <div class="card" style="background-color: #e1e7f1">
+          <img class="card-image-top" *ngIf="movie.poster_path" [lazyLoad]="movie.poster_path" alt="poster movie">
+          <div class="card-body">
+            <h5 class="title" style="float: left">{{movie.title}}</h5>
+            <br>
+            <p class="card-text" style="float: left"><small class="text-muted">{{movie.release_date | date}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="pagination" >
+  <hr>
+  <ul class="nav nav-pills">
+    <li class="nav-item" *ngFor="let p of pages; let i=index">
+      <h2>Page</h2>
+      <a class="nav-link" href="#" (click)="setPage(i,$event)" [ngClass]="{'active':i==page}">{{i}}</a>
+    </li>
+  </ul>
+</footer>
+
